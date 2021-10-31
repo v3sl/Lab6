@@ -2,8 +2,8 @@
 #define INC_21_10_2021_FUNCTIONS_H
 
 #include <iostream>
-#include <vector>
-#include <string>
+#include <cassert>
+#include <algorithm>
 
 using namespace std;
 
@@ -40,6 +40,7 @@ public:
 };
 
 void solve();
+int gcd (int a, int b);
 #endif
 
 

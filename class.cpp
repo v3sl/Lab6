@@ -1,5 +1,4 @@
 #include "functions.h"
-#include <cassert>
 
 void fraction::CheckDenominator(fraction a) {
     a = CorrectFraction(a);
@@ -21,22 +20,9 @@ fraction fraction::CorrectFraction(fraction a){
         fraction c2(-a.GetNumerator(), -a.GetDenominator());
         c = c2;
     }
-    if(a.GetDenominator() > a.GetNumerator() ){
-        for(int i = 2; i <= a.GetDenominator() ; i++){
-            if(a.GetDenominator() % i == 0 && a.GetNumerator() % i == 0){
-                fraction c3(c.GetNumerator()/i, c.GetDenominator()/i);
-                c = c3;
-            }
-        }
-    }
-    else {
-        for(int i = 2; i <= a.GetNumerator() ; i++){
-            if(a.GetDenominator() % i == 0 && a.GetNumerator() % i == 0){
-               fraction c4(c.GetNumerator()/i, c.GetDenominator()/i);
-                c = c4;
-            }
-        }
-    }
+    int p = gcd(a.GetNumerator(), a.GetDenominator());
+    fraction c4(c.GetNumerator()/p, c.GetDenominator()/p);
+    c = c4;
     return c;
 }
 
@@ -60,38 +46,38 @@ fraction fraction::GetFraction(fraction a) {
 }
 
 fraction fraction::Sum(fraction a, fraction b) {
-    a = a.CorrectFraction(a);
-    b = b.CorrectFraction(b);
+    //a = a.CorrectFraction(a);
+    //b = b.CorrectFraction(b);
     int x = a.GetDenominator()*b.GetNumerator() + b.GetDenominator()*a.GetNumerator();
     int y = a.GetDenominator()*b.GetDenominator();
     fraction c(x, y);
-    c = c.CorrectFraction(c);
+    //c = c.CorrectFraction(c);
     return c;
 }
 
 fraction fraction::Multiply(fraction a, fraction b ){
-    a = a.CorrectFraction(a);
-    b = b.CorrectFraction(b);
+    //a = a.CorrectFraction(a);
+    //b = b.CorrectFraction(b);
     int x = a.GetNumerator()*b.GetNumerator();
     int y = a.GetDenominator()*b.GetDenominator();
     fraction c(x,y);
-    c = c.CorrectFraction(c);
+    //c = c.CorrectFraction(c);
     return c;
 }
 
 fraction fraction::Division(fraction a, fraction b){
-    a = a.CorrectFraction(a);
-    b = b.CorrectFraction(b);
+    //a = a.CorrectFraction(a);
+    //b = b.CorrectFraction(b);
     int x = a.GetNumerator()*b.GetDenominator();
     int y = a.GetDenominator()*b.GetNumerator();
     fraction c(x,y);
-    c = c.CorrectFraction(c);
+    //c = c.CorrectFraction(c);
     return c;
 }
 
 void solve() {
-    fraction MyFraction1(1, -3);
-    fraction MyFraction2(-3, -6);
+    fraction MyFraction1(3, 12);
+    fraction MyFraction2(2, 4);
     fraction a2(MyFraction1);       
     MyFraction1.printFraction();
     MyFraction2.printFraction();
@@ -101,4 +87,12 @@ void solve() {
     c1.printFraction();
     fraction c2 = fraction::Division(MyFraction1, MyFraction2);
     c2.printFraction();    
+}
+
+int gcd (int a, int b) {
+	while (b) {
+		a %= b;
+		swap (a, b);
+	}
+	return a;
 }
