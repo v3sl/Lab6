@@ -19,7 +19,6 @@ private:
          numerator = 0;
          denominator = 1;
     }
-    
 public:
     fraction(int numerator, int denominator){
          this->numerator = numerator;
