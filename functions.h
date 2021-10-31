@@ -38,8 +38,9 @@ public:
     static fraction Division(fraction a, fraction b);
 };
 
-void solve();
 int gcd (int a, int b);
+
+void solve();
 #endif
 
 
