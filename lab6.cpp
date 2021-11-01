@@ -1,7 +1,5 @@
-#include <iostream>
 #include "class.cpp"
-
-using namespace std;
+#include "test for lab 6.h"
 
 int main() {
     solve();
