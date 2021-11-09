@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,7 +11,6 @@ class fraction {
 private:
     int numerator;
     int denominator;
-    int gcd (int a, int b);
     fraction(){
         numerator = 0;
         denominator = 1;
@@ -21,19 +21,22 @@ public:
         this->denominator = denominator;
         assert(denominator != 0);
     }
-     fraction(const fraction &frac){
+    fraction(const fraction &frac){
         numerator = frac.numerator;
         denominator = frac.denominator;
     }
-    int GetNumerator();
-    int GetDenominator();
+    int GetNumerator() const;
+    int GetDenominator() const;
+    string GetValue();
     void printFraction();
-    fraction GetFraction();
     fraction CorrectFraction();
     static fraction Sum(fraction a, fraction b);
-    static fraction Multiply(fraction a, fraction b); 
+    static fraction Multiply(fraction a, fraction b);
     static fraction Division(fraction a, fraction b);
 };
+
+bool operator==(const fraction& a,const fraction& b);
+bool operator+(const fraction& a,const fraction& b);
 
 void solve();
 #endif
