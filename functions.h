@@ -36,7 +36,6 @@ public:
 };
 
 bool operator==(const fraction& a,const fraction& b);
-bool operator+(const fraction& a,const fraction& b);
 
 void solve();
 #endif
