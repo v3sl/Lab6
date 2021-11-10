@@ -27,7 +27,6 @@ public:
     }
     int GetNumerator() const;
     int GetDenominator() const;
-    string GetValue();
     void printFraction();
     fraction CorrectFraction();
     static fraction Sum(fraction a, fraction b);
@@ -39,5 +38,4 @@ bool operator==(const fraction& a,const fraction& b);
 
 void solve();
 #endif
-
 

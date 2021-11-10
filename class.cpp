@@ -29,10 +29,6 @@ int fraction::GetDenominator() const{
     return denominator;
 }
 
-string GetValue(){
-    return "";
-}
-
 fraction fraction::Sum(fraction a, fraction b) {
     int x = a.GetDenominator()*b.GetNumerator() + b.GetDenominator()*a.GetNumerator();
     int y = a.GetDenominator()*b.GetDenominator();

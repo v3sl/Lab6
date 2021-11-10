@@ -64,3 +64,35 @@ TEST(testMultiply, test3){
     ASSERT_EQ(fraction::Multiply(testFraction2,testFraction),resultFraction);
 }
 
+TEST(testDivision, test1) {
+  fraction testFraction(2,3);
+fraction testFraction2(1,3);
+fraction resultFraction(3,6);
+ASSERT_EQ(fraction::Division(testFraction2,testFraction),resultFraction);
+}
+
+TEST(testDivision, test2) {
+    fraction testFraction(2,3);
+    fraction testFraction2(1,3);
+    fraction resultFraction(2,1);
+    ASSERT_EQ(fraction::Division(testFraction,testFraction2),resultFraction);
+}
+
+TEST(testDivision, test3) {
+    fraction testFraction(2,3);
+    fraction testFraction2(-1,3);
+    fraction resultFraction(-3,6);
+    ASSERT_EQ(fraction::Division(testFraction2,testFraction),resultFraction);
+}
+
+
+TEST(testDivision, test4) {
+    fraction testFraction(2,3);
+    fraction testFraction2(-1,3);
+    fraction resultFraction(-2,1);
+    ASSERT_EQ(fraction::Division(testFraction,testFraction2),resultFraction);
+}
+
+
+
+

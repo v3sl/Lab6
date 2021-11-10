@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
-project(test)
+project(lab6)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(test lab6.cpp test.cpp class.cpp functions.h)
+add_executable(test.cpp class.cpp functions.h main.cpp )
 
 
 # 'Google_test' is the subproject name
