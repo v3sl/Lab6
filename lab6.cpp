@@ -1,5 +1,4 @@
-#include "class.cpp"
-#include "test for lab 6.h"
+#include "functions.h"
 
 int main() {
     solve();
